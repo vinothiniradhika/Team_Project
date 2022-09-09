@@ -31,8 +31,8 @@ public class BookingService {
 	public Booking updateBooking(Booking book) { 
 		return bookingrepo.save(book);
 	}
-	public Booking findBookingByShopname(String shopname) { 
-		return (Booking) bookingrepo.findBookingByShopname(shopname).orElseThrow(()-> new BookingNotFoundException("No customer booked for "+ shopname));
+	public Booking findBookingByShopname(String shopname) throws Throwable { 
+		return (Booking) bookingrepo.findBookingByShopname(shopname).orElseThrow(()-> new BookingNotFoundException("No customer booked for the shop"));
 	}
 	
 

@@ -3,6 +3,7 @@ package com.saloon.service;
 import java.util.UUID;
 
 import com.saloon.entity.ShopSignup;
+import com.saloon.entity.UserLogin;
 import com.saloon.repository.ShopSignupRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,10 @@ public class ShopsignupService {
 	}
 	
 	public ShopSignup addShopSignup(ShopSignup ss) {
-		ss.setShopsignupCode(UUID.randomUUID().toString());
+		return ssrepo.save(ss);
+	}
+	
+	public ShopSignup updateShopSignup(ShopSignup ss) { 
 		return ssrepo.save(ss);
 	}
 	

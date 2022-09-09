@@ -19,14 +19,13 @@ public class ShoploginService {
 	}
 	
 	public ShopLogin addShopLogin(ShopLogin sl) {
-		sl.setShopLoginCode(UUID.randomUUID().toString());
 		return slrepo.save(sl);
 	}
-	public ShopLogin updateshopLogin(ShopLogin sl) { 
+	public ShopLogin updateShopLogin(ShopLogin sl) { 
 		return slrepo.save(sl);
 	}
 	
-	public ShopLogin findShopLoginBySemail(String semail) { 
+	public ShopLogin findShopLoginBySemail(String semail) throws Throwable { 
 		return (ShopLogin) slrepo.findShopLoginBySemail(semail).orElseThrow(()-> new ShopLoginNotFoundException("Incorrect username "));
 	}
 }

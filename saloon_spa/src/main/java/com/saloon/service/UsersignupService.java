@@ -18,7 +18,6 @@ public class UsersignupService {
 	}
 	
 	public UserSignup addUserSignup(UserSignup us) {
-		us.setUserSignupCode(UUID.randomUUID().toString());
 		return  usrepo.save(us);
 		
 	}

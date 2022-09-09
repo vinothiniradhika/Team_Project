@@ -21,14 +21,13 @@ public class UserloginService {
 	}
 	
 	public UserLogin addUserLogin(UserLogin ul) {
-		ul.setUserLoginCode(UUID.randomUUID().toString());
 		return ulrepo.save(ul);
 	}
 	public UserLogin updateUserLogin(UserLogin ul) { 
 		return ulrepo.save(ul);
 	}
 	
-	public UserLogin findUserLoginByUemail(String uemail) { 
+	public UserLogin findUserLoginByUemail(String uemail) throws Throwable { 
 		return (UserLogin) ulrepo.findUserLoginByUemail(uemail).orElseThrow(()-> new UserLoginNotFoundException("Incorrect username "));
 	}
 }

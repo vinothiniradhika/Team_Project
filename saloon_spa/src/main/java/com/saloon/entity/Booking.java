@@ -1,5 +1,6 @@
 package com.saloon.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,14 +22,22 @@ public class Booking {
 	private String gender;
 	private String time;
 	private String date;
+	@Column(nullable=false ,  updatable=false)
+	private String bookingCode;
 	@Override
 	public String toString() {
 		return "Booking [id=" + id + ", name=" + name + ", shopname=" + shopname + ", service=" + service + ", phone="
 				+ phone + ", email=" + email + ", age=" + age + ", gender=" + gender + ", time=" + time + ", date="
-				+ date + "]";
+				+ date + ", bookingCode=" + bookingCode + "]";
 	}
 	public int getId() {
 		return id;
+	}
+	public String getBookingCode() {
+		return bookingCode;
+	}
+	public void setBookingCode(String bookingCode) {
+		this.bookingCode = bookingCode;
 	}
 	public void setId(int id) {
 		this.id = id;
