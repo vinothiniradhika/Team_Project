@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ShopLoginRepository extends JpaRepository<ShopLogin, Integer>{
 
-	Optional findShopLoginBySemail(String semail);
+	Optional<ShopLogin> findShopLoginBySemail(String semail);
 
 }

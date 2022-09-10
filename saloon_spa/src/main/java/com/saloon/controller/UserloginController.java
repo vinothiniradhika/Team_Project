@@ -23,7 +23,7 @@ public class UserloginController {
 	}
 	
 	@GetMapping("/login/{uemail}")
-	public ResponseEntity<UserLogin> getUserLoginByUemail(@PathVariable("uemail") String uemail){
+	public ResponseEntity<UserLogin> getUserLoginByUemail(@PathVariable("uemail") String uemail) throws Throwable {
 		UserLogin userlogin=ulservice.findUserLoginByUemail(uemail);
 		return new ResponseEntity<>(userlogin,HttpStatus.OK);
 		
@@ -36,7 +36,7 @@ public class UserloginController {
 		
 	}
 	
-	@PutMapping("/update")
+	@PutMapping("/updateuserlogin")
 	public ResponseEntity<UserLogin> updateUserLogin(@RequestBody UserLogin userlogin){
 		UserLogin newUserLogin=ulservice.updateUserLogin(userlogin);
 		return new ResponseEntity<>(newUserLogin,HttpStatus.OK);

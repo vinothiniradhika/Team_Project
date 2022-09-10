@@ -25,7 +25,7 @@ public class ShopsignupController {
 		
 	}
 	
-	@PutMapping("/update")
+	@PutMapping("/updateshopsignup")
 	public ResponseEntity<ShopSignup> updateShopSignup(@RequestBody ShopSignup shopsignup){
 		ShopSignup newShopSignup=ssservice.updateShopSignup(shopsignup);
 		return new ResponseEntity<>(newShopSignup,HttpStatus.OK);

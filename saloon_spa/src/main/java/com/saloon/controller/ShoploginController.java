@@ -22,8 +22,8 @@ public class ShoploginController {
 		this.slservice = slservice;
 	}
 	
-	@GetMapping("/login/{semail}")
-	public ResponseEntity<ShopLogin> getShopLoginBySemail(@PathVariable("semail") String semail){
+	@GetMapping("/shoplogin/{semail}")
+	public ResponseEntity<ShopLogin> getShopLoginBySemail(@PathVariable("semail") String semail) throws Throwable{
 		ShopLogin shoplogin=slservice.findShopLoginBySemail(semail);
 		return new ResponseEntity<>(shoplogin,HttpStatus.OK);
 		
@@ -36,7 +36,7 @@ public class ShoploginController {
 		
 	}
 	
-	@PutMapping("/update")
+	@PutMapping("/updateshoplogin")
 	public ResponseEntity<ShopLogin> updateshoplogin(@RequestBody ShopLogin shoplogin){
 		ShopLogin newShopLogin=slservice.updateShopLogin(shoplogin);
 		return new ResponseEntity<>(newShopLogin,HttpStatus.OK);

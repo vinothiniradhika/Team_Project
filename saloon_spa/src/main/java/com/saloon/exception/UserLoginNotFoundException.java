@@ -1,11 +1,8 @@
 package com.saloon.exception;
 
-public class UserLoginNotFoundException {
-	String userlogexception;
-
-	public UserLoginNotFoundException(String userlogexception) {
-		super();
-		this.userlogexception = userlogexception;
+public class UserLoginNotFoundException extends RuntimeException{
+	public UserLoginNotFoundException(String message) {
+		super(message);
+	}
 	}
 
-}

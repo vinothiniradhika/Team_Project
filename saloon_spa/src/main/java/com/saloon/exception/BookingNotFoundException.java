@@ -1,12 +1,8 @@
 package com.saloon.exception;
 
-public class BookingNotFoundException {
-	String bookexception;
-
-	public BookingNotFoundException(String bookexception) {
-		super();
-		this.bookexception = bookexception;
-	}
+public class BookingNotFoundException extends RuntimeException{
 	
-
-}
+	public BookingNotFoundException(String message) {
+		super(message);
+	}
+	}

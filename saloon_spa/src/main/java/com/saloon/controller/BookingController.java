@@ -32,7 +32,7 @@ public class BookingController{
 	}
 	
 	@GetMapping("/booking/{shopname}")
-	public ResponseEntity<Booking> getBookingByShopname(@PathVariable("shopname") String shopname) throws Throwable{
+	public ResponseEntity<Booking> getBookingByShopname(@PathVariable("shopname") String shopname) throws Throwable {
 		Booking booking=bookservice.findBookingByShopname(shopname);
 		return new ResponseEntity<>(booking,HttpStatus.OK);
 		
@@ -45,7 +45,7 @@ public class BookingController{
 		
 	}
 	
-	@PutMapping("/update")
+	@PutMapping("/updatebooking")
 	public ResponseEntity<Booking> updateBooking(@RequestBody Booking booking){
 		Booking newBooking=bookservice.updateBooking(booking);
 		return new ResponseEntity<>(newBooking,HttpStatus.OK);

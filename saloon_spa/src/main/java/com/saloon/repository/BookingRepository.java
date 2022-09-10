@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookingRepository extends JpaRepository<Booking,Integer>{
 
-	Optional findBookingByShopname(String shopname);
+	Optional<Booking> findBookingByShopname(String shopname);
 
 }
