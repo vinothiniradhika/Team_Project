@@ -11,8 +11,9 @@ import javax.persistence.Table;
 @Table(name="Booking")
 public class Booking {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="book_seq")
+	@Column(name="id",nullable=false)
+	private long id;
 	private String name;
 	private String shopname;
 	private String service;
@@ -24,15 +25,31 @@ public class Booking {
 	private String date;
 	@Column(nullable=false ,  updatable=false)
 	private String bookingCode;
-	@Override
-	public String toString() {
-		return "Booking [id=" + id + ", name=" + name + ", shopname=" + shopname + ", service=" + service + ", phone="
-				+ phone + ", email=" + email + ", age=" + age + ", gender=" + gender + ", time=" + time + ", date="
-				+ date + ", bookingCode=" + bookingCode + "]";
+	
+	public Booking(long id, String name, String shopname, String service, String phone, String email, int age,
+			String gender, String time, String date, String bookingCode) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.shopname = shopname;
+		this.service = service;
+		this.phone = phone;
+		this.email = email;
+		this.age = age;
+		this.gender = gender;
+		this.time = time;
+		this.date = date;
+		this.bookingCode = bookingCode;
 	}
-	public int getId() {
+	
+	public long getId() {
 		return id;
 	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getBookingCode() {
 		return bookingCode;
 	}

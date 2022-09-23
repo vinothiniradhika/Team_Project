@@ -6,6 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserSignupRepository extends JpaRepository<UserSignup, Integer>{
+public interface UserSignupRepository extends JpaRepository<UserSignup, Long>{
+
+	//UserSignup findByusersUsernameAndPassword(String usemail, String uspassword);
+
+	UserSignup findByUsemailAndUspassword(String usemail, String uspassword);
 
 }

@@ -1,9 +1,9 @@
 package com.saloon.service;
 
-import java.util.UUID;
+import java.util.List;
 
 import com.saloon.entity.ShopSignup;
-import com.saloon.entity.UserLogin;
+import com.saloon.entity.UserSignup;
 import com.saloon.repository.ShopSignupRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,29 @@ public class ShopsignupService {
 		
 	}
 	
+	public List<ShopSignup> findAllShopSignups(){
+        return ssrepo.findAll();
+    }
+	
 	public ShopSignup addShopSignup(ShopSignup ss) {
 		return ssrepo.save(ss);
 	}
 	
 	public ShopSignup updateShopSignup(ShopSignup ss) { 
 		return ssrepo.save(ss);
+	} 
+
+	/*public ShopSignup findByShopUsernameAndPassword(String sremail, String srpassword) {
+		return ssrepo.findByshopUsernameAndPassword(sremail,srpassword);
 	}
+	*/
+
+	public ShopSignup findBySremailAndSrpassword(String sremail, String srpassword) {
+		// TODO Auto-generated method stub
+		return ssrepo.findBySremailAndSrpassword(sremail,srpassword);
+	}
+	
+	
 	
 
 }

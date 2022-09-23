@@ -3,6 +3,7 @@ package com.saloon.controller;
 
 
 import com.saloon.entity.UserSignup;
+import com.saloon.request.UserRequest;
 import com.saloon.service.UsersignupService;
 
 import org.springframework.http.HttpStatus;
@@ -26,4 +27,19 @@ public class UsersingnupController {
 		return new ResponseEntity<>(newUserSignup,HttpStatus.CREATED);
 		
 	}
+	@PostMapping("/userlogin")
+    public UserSignup userlogin(@RequestBody UserRequest a) throws Exception {
+                UserSignup user=a.toUser();
+         String usemail = user.getUsemail();
+         String uspassword = user.getUspassword();
+         UserSignup userObj=null;
+         if(usemail!=null && uspassword!=null)
+         {
+             userObj=usservice.findByUsemailAndUspassword(usemail, uspassword);
+         }
+         if(userObj == null) {
+             throw new Exception("Wrong credentials");
+         }
+         return userObj;
+     }
 }

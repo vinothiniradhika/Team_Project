@@ -21,6 +21,16 @@ public class UsersignupService {
 		return  usrepo.save(us);
 		
 	}
+
+	/*public UserSignup findByUsersUsernameAndPassword(String usemail, String uspassword) {
+		
+	 return usrepo.findByusersUsernameAndPassword(usemail,uspassword);
+	}*/
+
+	public UserSignup findByUsemailAndUspassword(String usemail, String uspassword) {
+		// TODO Auto-generated method stub
+		return usrepo.findByUsemailAndUspassword(usemail,uspassword);
+	}
 	
 	
 

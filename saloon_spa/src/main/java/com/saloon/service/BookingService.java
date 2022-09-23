@@ -16,7 +16,7 @@ public class BookingService {
 	private BookingRepository bookingrepo;
 	
 	@Autowired
-	public BookingService(BookingRepository repo) {
+	public BookingService(BookingRepository bookingrepo) {
 		this.bookingrepo=bookingrepo;
 	}
 	
